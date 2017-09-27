@@ -1,30 +1,31 @@
+var n, x, l, g, a;
 class GuessingGame {
     constructor() {}
 
     setRange(min, max) {
-        let n = min;
-        let x = max;
-        let l = false;
-        let g = false;
+        n = min;
+        x = max;
+        l = false;
+        g = false;
     }
 
     guess() {
-        if (let l) {
-            let x = a;
-        } else if (let g) {
-            let n = a;
+        if (l) {
+            x = a;
+        } else if (g) {
+            n = a;
         }
       a=Math.ceil(n + ((x - n)/2));
       return a;
     }
     lower() {
-       let l = true;
-       let g = false;
+       l = true;
+       g = false;
     }
 
     greater() {
-       let l = false;
-       let g = true;
+       l = false;
+       g = true;
     }
 }
 
