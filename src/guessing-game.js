@@ -9,9 +9,9 @@ class GuessingGame {
     }
 
     guess() {
-        if (l) {
+        if (let l) {
             x = a;
-        } else if (g) {
+        } else if (let g) {
             n = a;
         }
       a=Math.ceil(n + ((x - n)/2));
