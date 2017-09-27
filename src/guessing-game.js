@@ -4,6 +4,8 @@ class GuessingGame {
     setRange(min, max) {
         let n = min;
         let x = max;
+        let l = false;
+        let g = false;
     }
 
     guess() {
