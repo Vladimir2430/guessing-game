@@ -1,31 +1,34 @@
-var n, x, l, g, a;
+var mn,mx,average,isLower,isGreater,result;
+
 class GuessingGame {
     constructor() {}
 
     setRange(min, max) {
-        n = min;
-        x = max;
-        l = false;
-        g = false;
+    	mn=min;
+    	mx=max;
+    	isLower=false;
+    	isGreater=false;
     }
 
     guess() {
-        if (l) {
-            x = a;
-        } else if (g) {
-            n = a;
-        }
-      a=Math.ceil(n + ((x - n)/2));
-      return a;
+    	if(isLower){
+    		mx=average;
+    	}
+    	else if(isGreater){
+    		mn=average;
+    	}
+    	average=Math.ceil(mn + ((mx - mn)/2));
+    	return average;
     }
+
     lower() {
-       l = true;
-       g = false;
+    	isLower=true;
+    	isGreater=false
     }
 
     greater() {
-       l = false;
-       g = true;
+    	isGreater=true;
+    	isLower=false;
     }
 }
 
