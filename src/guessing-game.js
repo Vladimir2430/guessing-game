@@ -1,35 +1,27 @@
-var mn,mx,average,isLower,isGreater,result;
+let mn, mx, average, isLower, isGreater;
 
-class GuessingGame {
-    constructor() {}
+module.exports = class GuessingGame {
+  setRange(min, max) {
+    mn = min;
+    mx = max;
+    isLower = false;
+    isGreater = false;
+  }
 
-    setRange(min, max) {
-    	mn=min;
-    	mx=max;
-    	isLower=false;
-    	isGreater=false;
-    }
+  guess() {
+    if (isLower) {mx = average;}
+    if (isGreater) {mn = average;}
+    average = Math.ceil((mx + mn) / 2);
+    return average;
+  }
 
-    guess() {
-    	if(isLower){
-    		mx=average;
-    	}
-    	else if(isGreater){
-    		mn=average;
-    	}
-    	average=Math.ceil(mn + ((mx - mn)/2));
-    	return average;
-    }
+  lower() {
+    isLower = true;
+    isGreater = false;
+  }
 
-    lower() {
-    	isLower=true;
-    	isGreater=false
-    }
-
-    greater() {
-    	isGreater=true;
-    	isLower=false;
-    }
+  greater() {
+  	isGreater = true;
+    isLower = false;
+  }
 }
-
-module.exports = GuessingGame;
